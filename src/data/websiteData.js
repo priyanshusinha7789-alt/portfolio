@@ -1,0 +1,702 @@
+export const CAFE_DEMO_URL = "https://ad1tya-kumar.github.io/demo-cafe/";
+export const ACADEMY_DEMO_URL = "https://singular-palmier-a63df5.netlify.app/";
+
+export const NAV_LINKS = [
+  { name: "Home", href: "#hero" },
+  { name: "About", href: "#about" },
+  { name: "Our Work", href: "#work" },
+  { name: "Services", href: "#services" },
+  { name: "Packages", href: "#packages" },
+  { name: "Reviews", href: "#reviews" },
+  { name: "Contact", href: "#contact" },
+];
+
+export const PILLARS = [
+  {
+    icon: "Sparkles",
+    title: "No Generic Templates",
+    desc: "Every website layout is designed specifically around your products, menu items, or courses — never forced into a generic cookie-cutter theme.",
+  },
+  {
+    icon: "Smartphone",
+    title: "Mobile-First Architecture",
+    desc: "Over 80% of local customers browse on their smartphones. We guarantee lightning-fast, thumb-friendly navigation on every screen size.",
+  },
+  {
+    icon: "MessageSquare",
+    title: "Direct WhatsApp & Call Actions",
+    desc: "We place easy 1-tap WhatsApp ordering or direct inquiry buttons right where hungry diners or prospective students look.",
+  },
+  {
+    icon: "ShieldCheck",
+    title: "Honest & Transparent Pricing",
+    desc: "Clear upfront costs, zero surprise retainers, and simple maintenance packages that respect your small business budget.",
+  },
+];
+
+export const WHY_US_CARDS = [
+  {
+    platform: "Instagram Alone",
+    icon: "Instagram",
+    status: "Scattered Info",
+    problems: [
+      "Menu highlights and course batches get lost in past posts & reels",
+      "No structured price list, syllabus breakdown, or category search",
+      "Customers get distracted by competing feeds and algorithms",
+    ],
+    bgClass: "bg-[#F5EFE6]/60 border-[#E3D5C5]",
+  },
+  {
+    platform: "Google Maps Alone",
+    icon: "MapPin",
+    status: "Limited Control",
+    problems: [
+      "Cannot customize your brand aesthetic, campus photos, or atmosphere",
+      "No interactive menu, admission lead form, or stream selector",
+      "Competitors recommended right below your listing",
+    ],
+    bgClass: "bg-[#F5EFE6]/60 border-[#E3D5C5]",
+  },
+  {
+    platform: "WhatsApp Chat Alone",
+    icon: "MessageCircle",
+    status: "Manual Friction",
+    problems: [
+      "Staff repeatedly sending blurry PDFs or course prospectuses",
+      "Manual texting back and forth for basic operating/office hours",
+      "Zero automated lead capture, student records, or order tally",
+    ],
+    bgClass: "bg-[#F5EFE6]/60 border-[#E3D5C5]",
+  },
+];
+
+export const PROJECTS = [
+  {
+    id: "cafe",
+    name: "Brew & Bloom Café",
+    category: "Hospitality & Specialty Kitchen",
+    industry: "Specialty Coffee & Artisan Dining",
+    location: "Haldia, West Bengal",
+    tech: "Responsive HTML5, Leaflet Maps, WhatsApp Ordering API",
+    url: CAFE_DEMO_URL,
+    badge: "Food & Beverage Concept",
+    icon: "Coffee",
+    desc: "A modern café website concept designed to bring the complete customer experience online — from discovering the menu to exploring the café, finding the location and starting an order.",
+    tags: [
+      "Website Design",
+      "Responsive Development",
+      "Menu",
+      "Food Showcase",
+      "WhatsApp",
+      "Location",
+      "Ordering Experience",
+    ],
+    features: [
+      {
+        icon: "Utensils",
+        title: "MENU",
+        subtitle: "Bestsellers & Pricing",
+        desc: "Clean digital menu organized by categories with instant price lookups and dietary tags.",
+      },
+      {
+        icon: "Flame",
+        title: "FOOD",
+        subtitle: "Visual Food Presentation",
+        desc: "Appetizing high-resolution imagery and artisan banners showcasing specialty items.",
+      },
+      {
+        icon: "ShoppingBag",
+        title: "ORDERING",
+        subtitle: "Customer Ordering Flow",
+        desc: "Integrated cart system allowing customers to pick items and review their order seamlessly.",
+      },
+      {
+        icon: "MessageCircle",
+        title: "WHATSAPP",
+        subtitle: "Direct Communication",
+        desc: "1-click WhatsApp order dispatch sending the complete cart summary directly to the owner.",
+      },
+      {
+        icon: "MapPin",
+        title: "LOCATION",
+        subtitle: "Find the Café Easily",
+        desc: "Interactive map, address details, and directions to convert online viewers into foot traffic.",
+      },
+      {
+        icon: "Smartphone",
+        title: "MOBILE",
+        subtitle: "Responsive Experience",
+        desc: "Flawless rendering and thumb-friendly controls across every phone, tablet, and desktop.",
+      },
+    ],
+    steps: [
+      {
+        step: "01",
+        title: "First Impression",
+        subtitle: "Brand Atmosphere & Ambience",
+        desc: "Designed a strong homepage focused on the café's identity and food.",
+        highlights: [
+          "Warm ambient café aesthetic with dark roast accents",
+          "Immediate tagline & location visibility",
+          "Instant 'Explore Menu' and 'WhatsApp Order' buttons",
+        ],
+        image: "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=1200&auto=format&fit=crop&q=80",
+        badge: "Hero & Brand Identity",
+      },
+      {
+        step: "02",
+        title: "Menu Experience",
+        subtitle: "Categorized & Dynamic Pricing",
+        desc: "Structured the menu so customers can quickly understand dishes and pricing.",
+        highlights: [
+          "Filterable categories: Coffee, Pizzas, Pastas, Desserts",
+          "Vegetarian / Chef Special dietary indicators",
+          "Clear pricing with 1-click cart addition",
+        ],
+        image: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=1200&auto=format&fit=crop&q=80",
+        badge: "Interactive Menu",
+      },
+      {
+        step: "03",
+        title: "Food Showcase",
+        subtitle: "High-Fidelity Visual Appeal",
+        desc: "Used strong visual presentation to make the food experience more engaging.",
+        highlights: [
+          "High-res photography for artisan pizzas & coffees",
+          "Bestseller ribbon tags & customer favorites",
+          "Curated promo banners for daily oven specials",
+        ],
+        image: "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=1200&auto=format&fit=crop&q=80",
+        badge: "Appetite Design",
+      },
+      {
+        step: "04",
+        title: "Ordering Experience",
+        subtitle: "WhatsApp Cart & Instant Dispatch",
+        desc: "Created an ordering flow that helps customers start an order.",
+        highlights: [
+          "Live cart drawer with real-time bill calculation",
+          "Pre-formatted WhatsApp order dispatch message",
+          "Delivery / Dine-in selection & customer details",
+        ],
+        image: "https://images.unsplash.com/photo-1556742049-0a67c5574f73?w=1200&auto=format&fit=crop&q=80",
+        badge: "Zero-Commission Ordering",
+      },
+      {
+        step: "05",
+        title: "Location & Contact",
+        subtitle: "Google & Leaflet Map Integration",
+        desc: "Made important location and contact information easy to access.",
+        highlights: [
+          "Embedded interactive map pinned in Haldia, WB",
+          "Operating hours & 7-days open status",
+          "Direct phone call and Google Maps route triggers",
+        ],
+        image: "https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=1200&auto=format&fit=crop&q=80",
+        badge: "Find Us & Hours",
+      },
+      {
+        step: "06",
+        title: "Mobile Experience",
+        subtitle: "Touch-Optimized for Local Shoppers",
+        desc: "Designed the experience to work smoothly across mobile devices.",
+        highlights: [
+          "Sticky bottom cart trigger with live item count badge",
+          "Smooth hamburger navigation & rapid touch response",
+          "Ultra-fast loading under 1.2s on mobile networks",
+        ],
+        image: "https://images.unsplash.com/photo-1526738549149-8e07eca6c147?w=1200&auto=format&fit=crop&q=80",
+        badge: "Mobile Mastered",
+      },
+    ],
+    previews: {
+      hero: {
+        title: "Hero & Brand Story",
+        desc: "Warm ambient café photography, compelling typography, and instant call to actions for menu and ordering.",
+        image: "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=1200&auto=format&fit=crop&q=80",
+        tag: "First Impression",
+      },
+      menu: {
+        title: "Interactive Categorized Menu",
+        desc: "Fast categorized menu with live filters for artisan coffees, wood-fired pizzas, gourmet pastas, and molten desserts.",
+        image: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=1200&auto=format&fit=crop&q=80",
+        tag: "Menu Experience",
+      },
+      ordering: {
+        title: "WhatsApp Cart & Ordering Flow",
+        desc: "Live item counter, total bill tally, and 1-tap WhatsApp message dispatcher without commission cuts.",
+        image: "https://images.unsplash.com/photo-1556742049-0a67c5574f73?w=1200&auto=format&fit=crop&q=80",
+        tag: "Ordering Flow",
+      },
+      location: {
+        title: "Location, Map & Operational Hours",
+        desc: "Integrated Leaflet map with pinpoint coordinates in Haldia, West Bengal and one-tap phone dialing.",
+        image: "https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=1200&auto=format&fit=crop&q=80",
+        tag: "Map & Directions",
+      },
+    },
+  },
+  {
+    id: "academy",
+    name: "Haldia Learning Academy",
+    category: "Education & Coaching Institute",
+    industry: "Premier Coaching for JEE, NEET & Foundation",
+    location: "Haldia Central Campus, West Bengal",
+    tech: "React 19, Tailwind CSS, LocalStorage Lead Store, CSV Exporter",
+    url: ACADEMY_DEMO_URL,
+    badge: "Coaching Institute Portal",
+    icon: "GraduationCap",
+    desc: "A premier coaching institute platform engineered for students and parents in Haldia — featuring structured JEE/NEET course paths, Ex-IITian mentorship credentials, interactive syllabus modals, and an integrated student lead management portal.",
+    tags: [
+      "Education Portal",
+      "JEE / NEET Streams",
+      "Ex-IITian Mentorship",
+      "Lead Capture System",
+      "Curriculum Timelines",
+      "Responsive Layout",
+      "Admin Leads CRM",
+    ],
+    features: [
+      {
+        icon: "GraduationCap",
+        title: "COURSES",
+        subtitle: "JEE, NEET & Foundation",
+        desc: "Structured course catalogs for Class 8-12 and Dropper batches with comprehensive subject breakdowns.",
+      },
+      {
+        icon: "Award",
+        title: "FACULTY",
+        subtitle: "Ex-IITian Mentors",
+        desc: "Pedigree showcase highlighting educator credentials, alumni track record, and personalized doubt sessions.",
+      },
+      {
+        icon: "Calendar",
+        title: "SYLLABUS",
+        subtitle: "Timeline & Roadmap",
+        desc: "Interactive chapter milestones and exam schedule modals accessible with a single click.",
+      },
+      {
+        icon: "UserCheck",
+        title: "LEADS",
+        subtitle: "Student Registration",
+        desc: "Fast admission inquiry funnel capturing student details, target exam, and parent phone numbers.",
+      },
+      {
+        icon: "MapPin",
+        title: "CAMPUS",
+        subtitle: "Haldia Central Location",
+        desc: "Integrated campus coordinates in Haldia, WB with direct calling and WhatsApp counseling.",
+      },
+      {
+        icon: "Shield",
+        title: "ADMIN",
+        subtitle: "Leads Management Hub",
+        desc: "Built-in admin dashboard with search, CSV export, and real-time lead tracking (Ctrl+Shift+A).",
+      },
+    ],
+    steps: [
+      {
+        step: "01",
+        title: "Academic Credibility",
+        subtitle: "First Impression & Trust",
+        desc: "Established immediate parental trust through academic accolades, Ex-IITian pedigree, and authoritative institute branding.",
+        highlights: [
+          "Ex-IITian faculty credential highlights",
+          "Target exam focus: JEE, NEET, Foundation & Boards",
+          "Instant 'Explore Courses' and 'Enquire Now' triggers",
+        ],
+        image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1200&auto=format&fit=crop&q=80",
+        badge: "Hero & Positioning",
+      },
+      {
+        step: "02",
+        title: "Course Architecture",
+        subtitle: "Targeted Streams & Eligibility",
+        desc: "Engineered clean, interactive course cards for Foundation (8-10), Secondary, Higher Secondary, and JEE/NEET Droppers.",
+        highlights: [
+          "Clear batch eligibility and duration badges",
+          "Subject breakdown: Physics, Chemistry, Maths, Biology",
+          "Dedicated 1-click syllabus and timeline modals",
+        ],
+        image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1200&auto=format&fit=crop&q=80",
+        badge: "Stream Navigator",
+      },
+      {
+        step: "03",
+        title: "Curriculum Modals",
+        subtitle: "In-Depth Syllabus Timelines",
+        desc: "Built interactive popups displaying detailed weekly lecture plans, test frequencies, and milestone study materials.",
+        highlights: [
+          "Phase-wise exam syllabus progress breakdown",
+          "Mock test schedules and doubt-clearing sessions",
+          "Pre-formatted course selection into inquiry form",
+        ],
+        image: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=1200&auto=format&fit=crop&q=80",
+        badge: "Syllabus Breakdown",
+      },
+      {
+        step: "04",
+        title: "Admission Lead Capture",
+        subtitle: "Frictionless Inquiry Funnel",
+        desc: "Designed high-converting modal forms capturing student name, parent contact, target exam, and notes with instant feedback.",
+        highlights: [
+          "Pre-selected course auto-population in modals",
+          "Instant toast notifications upon lead capture",
+          "Zero login barriers for busy parents",
+        ],
+        image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&auto=format&fit=crop&q=80",
+        badge: "High-Converting Leads",
+      },
+      {
+        step: "05",
+        title: "Campus & Contact Hub",
+        subtitle: "Haldia Central Location",
+        desc: "Positioned campus location, visiting hours, direct phone dialing, and 1-tap WhatsApp consultation for parents.",
+        highlights: [
+          "Address details for Haldia Central Campus, WB",
+          "Daily visiting hours and counselor availability",
+          "Direct telephone and WhatsApp consultation links",
+        ],
+        image: "https://images.unsplash.com/photo-1562774053-701939374585?w=1200&auto=format&fit=crop&q=80",
+        badge: "Campus Discovery",
+      },
+      {
+        step: "06",
+        title: "Admin Portal & Leads",
+        subtitle: "Staff Management Dashboard",
+        desc: "Built an internal admin leads viewer with search filters, real-time lead counts, and one-click CSV export.",
+        highlights: [
+          "Secret shortcut: Ctrl + Shift + A or footer trigger",
+          "Search leads by student name, phone, or target exam",
+          "One-click CSV export for offline counseling calls",
+        ],
+        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&auto=format&fit=crop&q=80",
+        badge: "Admin Lead CRM",
+      },
+    ],
+    previews: {
+      hero: {
+        title: "Academy Identity & Mentorship",
+        desc: "Premier coaching presentation with faculty credentials, student badges, and direct course exploration.",
+        image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1200&auto=format&fit=crop&q=80",
+        tag: "Academy Hero",
+      },
+      courses: {
+        title: "JEE, NEET & Foundation Catalog",
+        desc: "Structured stream cards with class eligibility, duration, syllabus modals, and direct enquiry buttons.",
+        image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1200&auto=format&fit=crop&q=80",
+        tag: "Course Streams",
+      },
+      admission: {
+        title: "Student Enquiry & Lead Capture",
+        desc: "Optimized admission modal and contact form capturing student requirements directly into local storage.",
+        image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&auto=format&fit=crop&q=80",
+        tag: "Lead Capture",
+      },
+      admin: {
+        title: "Staff & Lead Management Portal",
+        desc: "Internal dashboard with search, test lead generators, and instant CSV export for administrative counselors.",
+        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&auto=format&fit=crop&q=80",
+        tag: "Admin CRM Portal",
+      },
+    },
+  },
+];
+
+// Fallback exports for backward compatibility
+export const INSIDE_PROJECT_STEPS = PROJECTS[0].steps;
+export const PROJECT_FEATURES = PROJECTS[0].features;
+
+export const PROCESS_STEPS = [
+  {
+    number: "01",
+    phase: "UNDERSTAND",
+    title: "Discovery & Brand Alignment",
+    desc: "We start by understanding your business, your target customers, your menu or services, and what specific actions visitors should take.",
+    details: ["Consultation on goals", "Content & image collection", "Menu & service mapping"],
+  },
+  {
+    number: "02",
+    phase: "DESIGN",
+    title: "Visual Architecture & Tone",
+    desc: "We turn that information into a clean, premium visual experience tailored to your aesthetic — selecting warm colors, typography, and layout.",
+    details: ["Custom UI design", "Brand color harmony", "Mobile wireframing"],
+  },
+  {
+    number: "03",
+    phase: "BUILD",
+    title: "Responsive Development & Integrations",
+    desc: "We develop the responsive website, implement smooth animations, and connect your WhatsApp, Google Maps, and social links.",
+    details: ["Modern responsive code", "WhatsApp ordering hooks", "Map & contact setup"],
+  },
+  {
+    number: "04",
+    phase: "REFINE",
+    title: "Testing, Launch & Handover",
+    desc: "We test the experience across iPhones, Androids, tablets, and laptops, optimize loading speed, and launch your digital home.",
+    details: ["Cross-device verification", "Speed & SEO check", "Live launch & support"],
+  },
+];
+
+export const DIFFERENTIATORS = [
+  {
+    icon: "Palette",
+    title: "CUSTOM DESIGN",
+    desc: "Built around the business instead of a generic one-size-fits-all layout.",
+    benefit: "Your brand feels distinct, authentic, and unforgettable to local visitors.",
+  },
+  {
+    icon: "Smartphone",
+    title: "MOBILE FIRST",
+    desc: "Designed to work beautifully on phones.",
+    benefit: "Smooth tap targets, rapid load times, and no awkward horizontal pinching.",
+  },
+  {
+    icon: "Compass",
+    title: "BUSINESS FOCUSED",
+    desc: "Focused on what customers need to see and do.",
+    benefit: "Less fluff, more orders, phone calls, direction lookups, and direct conversations.",
+  },
+  {
+    icon: "MessageSquareCheck",
+    title: "CLEAR COMMUNICATION",
+    desc: "Simple and understandable project process.",
+    benefit: "No confusing technical jargon — just honest timelines and transparent milestones.",
+  },
+  {
+    icon: "Code2",
+    title: "MODERN DEVELOPMENT",
+    desc: "Modern tools and development workflows.",
+    benefit: "Ultra-fast loading times, clean semantic markup, and reliable performance.",
+  },
+  {
+    icon: "ShieldCheck",
+    title: "SUPPORT",
+    desc: "Maintenance and updates according to the selected package and agreement.",
+    benefit: "Help with price changes, seasonal banners, and ongoing peace of mind.",
+  },
+];
+
+export const SERVICES = [
+  {
+    id: "website-design",
+    name: "Website Design",
+    category: "Design",
+    desc: "Bespoke, brand-aligned visual design that reflects your atmosphere, menu, and aesthetic.",
+    tags: ["Custom UI", "Color Systems", "Typography"],
+  },
+  {
+    id: "website-dev",
+    name: "Website Development",
+    category: "Development",
+    desc: "High-performance, mobile-first code built for ultra-fast loading on mobile networks.",
+    tags: ["Responsive", "Clean Code", "Speed"],
+  },
+  {
+    id: "menu-websites",
+    name: "Menu Websites",
+    category: "Hospitality",
+    desc: "Digital categorized menus for cafés, bakeries, and restaurants with easy price updates.",
+    tags: ["Food Categories", "Dietary Tags", "Specials"],
+  },
+  {
+    id: "business-websites",
+    name: "Business & Coaching Portals",
+    category: "Corporate",
+    desc: "Professional digital homes for coaching institutes, tuition centres, shops, and retail stores.",
+    tags: ["Course Streams", "Syllabus Modals", "Lead Capture"],
+  },
+  {
+    id: "whatsapp-integration",
+    name: "WhatsApp Integration",
+    category: "Integrations",
+    desc: "Direct 1-tap WhatsApp chat and pre-formatted inquiry/order dispatch without third-party commissions.",
+    tags: ["Instant Chat", "Order Summary", "Inquiries"],
+  },
+  {
+    id: "social-media",
+    name: "Social Media Integration",
+    category: "Integrations",
+    desc: "Seamlessly connect your Instagram feed, Facebook, and YouTube channels to your site.",
+    tags: ["Instagram", "Social Links", "Feeds"],
+  },
+  {
+    id: "google-maps",
+    name: "Google Maps Integration",
+    category: "Integrations",
+    desc: "Interactive map embeds and 1-tap driving directions so local clients easily find your door or campus.",
+    tags: ["Leaflet / Maps", "Route Directions", "Opening Hours"],
+  },
+  {
+    id: "offers-promotions",
+    name: "Offers & Promotions",
+    category: "Marketing",
+    desc: "Eye-catching banner ribbons, admission discounts, and special course highlights.",
+    tags: ["Promo Banners", "Seasonal Deals", "Announcements"],
+  },
+  {
+    id: "customer-feedback",
+    name: "Customer Feedback",
+    category: "Engagement",
+    desc: "Clean feedback forms and Google Review prompts to boost your local reputation.",
+    tags: ["Review Links", "Feedback Forms", "Rating Display"],
+  },
+  {
+    id: "website-maintenance",
+    name: "Website Maintenance",
+    category: "Support",
+    desc: "Routine health checks, menu/course price adjustments, image updates, and hosting management.",
+    tags: ["Content Edits", "Bug Fixes", "Uptime Care"],
+  },
+  {
+    id: "custom-features",
+    name: "Custom Features & Portals",
+    category: "Specialized",
+    desc: "Tailored additions such as student registration systems, internal admin lead hubs, or syllabus downloads.",
+    tags: ["Lead CRM", "Syllabus Modals", "Custom Logic"],
+  },
+];
+
+export const PACKAGES = [
+  {
+    id: "starter",
+    name: "STARTER",
+    price: "₹5,999",
+    period: "one-time project",
+    popular: false,
+    badge: "Ideal for Small Shops & Boutiques",
+    desc: "The essential digital presence for single-location businesses ready to upgrade from social media.",
+    features: [
+      "Basic business website",
+      "Business information & about section",
+      "Standard content & image presentation",
+      "100% Mobile responsive design",
+      "Basic contact & location details",
+      "Complete deployment & setup",
+    ],
+    ctaText: "Get Started with Starter",
+  },
+  {
+    id: "business",
+    name: "BUSINESS",
+    price: "₹9,999",
+    period: "one-time project",
+    popular: true,
+    badge: "MOST POPULAR — Best for Cafés & Diners",
+    desc: "The complete interactive website package with rich menu presentation and direct WhatsApp ordering.",
+    features: [
+      "Enhanced custom design & typography",
+      "Full digital Menu / Pricing catalog section",
+      "Direct WhatsApp order & inquiry integration",
+      "Instagram & social media connection",
+      "Customer feedback & review option",
+      "Offers, combo & promotional banners",
+      "High-speed mobile responsive design",
+      "Complete domain connection & deployment",
+    ],
+    ctaText: "Choose Business Package",
+  },
+  {
+    id: "premium",
+    name: "PREMIUM",
+    price: "₹14,999",
+    period: "one-time project",
+    popular: false,
+    badge: "For Established & Coaching Hubs",
+    desc: "Fully bespoke visual identity with custom sections, enhanced animations, and priority execution.",
+    features: [
+      "More customized editorial design & layout",
+      "Advanced custom sections (Course Streams, Lead Forms)",
+      "Additional custom styling & visual assets",
+      "Project-specific feature implementations (Admin CRM)",
+      "Priority communication & agreed support window",
+      "SEO optimization & Google business linking",
+    ],
+    ctaText: "Choose Premium Package",
+  },
+  {
+    id: "maintenance",
+    name: "MAINTENANCE",
+    price: "₹1,000",
+    period: "per month (optional)",
+    popular: false,
+    badge: "Hassle-Free Peace of Mind",
+    desc: "Keep your website fresh with timely menu updates, seasonal price tweaks, and technical upkeep.",
+    features: [
+      "Minor content & price updates",
+      "Image replacements & banner additions",
+      "Basic bug fixes & link checks",
+      "Routine website health monitoring",
+      "Ongoing hosting & domain assistance",
+    ],
+    ctaText: "Add Maintenance Plan",
+  },
+];
+
+export const QUALITATIVE_BENEFITS = [
+  {
+    icon: "Compass",
+    title: "Clearer Online Presence",
+    desc: "A singular, professional destination where customers find your true story, brand, and offerings without social media distractions.",
+  },
+  {
+    icon: "Search",
+    title: "Easier Customer Discovery",
+    desc: "Local residents searching online immediately find your operating hours, location, and offerings right at their fingertips.",
+  },
+  {
+    icon: "Smartphone",
+    title: "Better Mobile Experience",
+    desc: "Flawless browsing with large legible text, quick category filters, and smooth 1-tap buttons on any smartphone.",
+  },
+  {
+    icon: "Sparkles",
+    title: "Professional First Impression",
+    desc: "Instantly build trust with potential diners, parents, or clients who judge credibility based on visual polish.",
+  },
+  {
+    icon: "Layers",
+    title: "Information in One Place",
+    desc: "No more sending fragmented PDF menus, typed WhatsApp texts, or missing direction instructions.",
+  },
+  {
+    icon: "PhoneCall",
+    title: "Simple Customer Contact",
+    desc: "Direct 1-tap WhatsApp messages, direct calling, and navigation routes with zero barriers to entry.",
+  },
+];
+
+export const FAQS = [
+  {
+    q: "Why does my business need a website?",
+    a: "Social media feeds bury important details like your full menu, course streams, and location. A dedicated website gives your business a permanent, professional digital home that builds instant trust and makes it effortless for local customers to explore and take action.",
+  },
+  {
+    q: "Can you build websites for coaching centres or shops too?",
+    a: "Yes, absolutely! As showcased in our featured projects, we build bespoke websites for coaching institutes (like Haldia Learning Academy with course paths, syllabus modals & lead capture), cafés and restaurants (with menus & WhatsApp orders), as well as retail shops.",
+  },
+  {
+    q: "Can customers contact me through WhatsApp?",
+    a: "Yes. We integrate 1-tap WhatsApp buttons throughout the website. In our Business and Premium packages, we can also generate pre-filled WhatsApp messages with the customer's selected items or inquiry details.",
+  },
+  {
+    q: "Can the website work on mobile?",
+    a: "Every website we build is 100% mobile-first. We test on multiple screen sizes (iPhones, Android devices, tablets, laptops) to guarantee fast loading and comfortable touch navigation.",
+  },
+  {
+    q: "Can you redesign my existing website?",
+    a: "Yes! If you already have an outdated or slow website, we can redesign it from scratch using our modern, warm aesthetic and optimize it for mobile speed and conversions.",
+  },
+  {
+    q: "Can I update the website later?",
+    a: "Yes. We build clean, modular websites. When prices change, new courses/items are added, or seasonal hours change, you can update them or let us handle it through our affordable ₹1,000/month maintenance plan.",
+  },
+  {
+    q: "What happens after the website is launched?",
+    a: "Once launched, your website is fully live on your chosen domain. We ensure all links and buttons work properly, and provide you with support or ongoing maintenance depending on your selected package.",
+  },
+  {
+    q: "Can you build custom features like lead capture portals?",
+    a: "Yes! If you need specific features like student lead capture forms for coaching institutes, administrative lead export dashboards, or custom product catalogs, we build tailored solutions scoped to your requirements.",
+  },
+];
