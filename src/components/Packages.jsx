@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import ScrollReveal from "./ScrollReveal";
 import { PACKAGES } from "../data/websiteData";
-import { CheckCircle2, ArrowRight, Sparkles, Info } from "lucide-react";
+import { CheckCircle2, ArrowRight, Sparkles, Info, Globe, CreditCard } from "lucide-react";
 
 export default function Packages({ onSelectPackage }) {
-  const handlePackageClick = (packageName) => {
+  const [currencyMode, setCurrencyMode] = useState("both"); // "both", "inr", "usd"
+
+  const handlePackageClick = (pkg) => {
+    const formattedSelection = `${pkg.name} (${pkg.priceINR} / ${pkg.priceUSD})`;
     if (onSelectPackage) {
-      onSelectPackage(packageName);
+      onSelectPackage(formattedSelection);
     }
     const contactSection = document.querySelector("#contact");
     if (contactSection) {
@@ -19,23 +22,60 @@ export default function Packages({ onSelectPackage }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-12">
           <ScrollReveal direction="up">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EDE2D4] border border-[#E3D5C5] text-[#6F4E37] text-xs font-semibold tracking-wide uppercase shadow-xs mb-4">
               <span className="w-1.5 h-1.5 rounded-full bg-[#C47D4C]"></span>
-              <span>Transparent Pricing</span>
+              <span>Transparent Domestic &amp; Global Pricing</span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-[#2B1B14] leading-[1.15] mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-[#2B1B14] leading-[1.15] mb-4">
               Honest packages built for <br className="hidden sm:inline" />
               <span className="italic font-normal font-serif text-[#6F4E37]">
-                small business budgets.
+                local &amp; international businesses.
               </span>
             </h2>
 
-            <p className="text-base sm:text-lg text-[#6F4E37] leading-relaxed">
-              No hidden retainers or confusing agency tiers. Pick the scope that fits your current business stage and launch with confidence.
+            <p className="text-base sm:text-lg text-[#6F4E37] leading-relaxed mb-8">
+              No hidden retainers or confusing agency tiers. Indian Rupee (₹) &amp; US Dollar ($) pricing presented side-by-side for total clarity.
             </p>
+
+            {/* Currency Mode Switcher */}
+            <div className="inline-flex items-center p-1 bg-[#EDE2D4] rounded-2xl border border-[#E3D5C5] shadow-xs">
+              <button
+                onClick={() => setCurrencyMode("both")}
+                className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all flex items-center gap-1.5 ${
+                  currencyMode === "both"
+                    ? "bg-[#2B1B14] text-[#F5EFE6] shadow-sm"
+                    : "text-[#6F4E37] hover:text-[#2B1B14]"
+                }`}
+              >
+                <Globe className="w-3.5 h-3.5 text-[#C47D4C]" />
+                <span>Side-by-Side (₹ &amp; $)</span>
+              </button>
+
+              <button
+                onClick={() => setCurrencyMode("inr")}
+                className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all ${
+                  currencyMode === "inr"
+                    ? "bg-[#2B1B14] text-[#F5EFE6] shadow-sm"
+                    : "text-[#6F4E37] hover:text-[#2B1B14]"
+                }`}
+              >
+                <span>₹ INR Only</span>
+              </button>
+
+              <button
+                onClick={() => setCurrencyMode("usd")}
+                className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all ${
+                  currencyMode === "usd"
+                    ? "bg-[#2B1B14] text-[#F5EFE6] shadow-sm"
+                    : "text-[#6F4E37] hover:text-[#2B1B14]"
+                }`}
+              >
+                <span>$ USD (Global)</span>
+              </button>
+            </div>
           </ScrollReveal>
         </div>
 
@@ -78,18 +118,60 @@ export default function Packages({ onSelectPackage }) {
                       </span>
                     </div>
 
-                    {/* Plan Name & Price */}
-                    <h3 className="text-2xl font-serif font-bold mb-1">
+                    {/* Plan Name */}
+                    <h3 className="text-2xl font-serif font-bold mb-2">
                       {pkg.name}
                     </h3>
                     
-                    <div className="flex items-baseline gap-1.5 mb-4">
-                      <span className={`text-4xl font-serif font-bold ${isPopular ? "text-amber-200" : "text-[#2B1B14]"}`}>
-                        {pkg.price}
-                      </span>
-                      <span className={`text-xs ${isPopular ? "text-[#EDE2D4]/70" : "text-[#8B6B52]"}`}>
-                        {pkg.period}
-                      </span>
+                    {/* Price Display Based on Currency Mode */}
+                    <div className="mb-4">
+                      {currencyMode === "both" && (
+                        <div>
+                          <div className="flex flex-wrap items-baseline gap-2">
+                            <span className={`text-3xl sm:text-4xl font-serif font-bold ${isPopular ? "text-amber-200" : "text-[#2B1B14]"}`}>
+                              {pkg.priceINR}
+                            </span>
+                            <span className="text-lg sm:text-xl font-serif font-bold text-[#C47D4C]">
+                              / {pkg.priceUSD}
+                            </span>
+                          </div>
+                          <div className={`text-[11px] mt-1 ${isPopular ? "text-[#EDE2D4]/70" : "text-[#8B6B52]"}`}>
+                            {pkg.period} • Domestic &amp; Global clients
+                          </div>
+                        </div>
+                      )}
+
+                      {currencyMode === "inr" && (
+                        <div>
+                          <div className="flex items-baseline gap-1.5">
+                            <span className={`text-4xl font-serif font-bold ${isPopular ? "text-amber-200" : "text-[#2B1B14]"}`}>
+                              {pkg.priceINR}
+                            </span>
+                            <span className={`text-xs ${isPopular ? "text-[#EDE2D4]/70" : "text-[#8B6B52]"}`}>
+                              {pkg.period}
+                            </span>
+                          </div>
+                          <div className={`text-[11px] mt-1 ${isPopular ? "text-amber-200/80" : "text-[#C47D4C]"}`}>
+                            ≈ {pkg.priceUSD} for foreign clients
+                          </div>
+                        </div>
+                      )}
+
+                      {currencyMode === "usd" && (
+                        <div>
+                          <div className="flex items-baseline gap-1.5">
+                            <span className={`text-4xl font-serif font-bold ${isPopular ? "text-amber-200" : "text-[#2B1B14]"}`}>
+                              {pkg.priceUSD}
+                            </span>
+                            <span className={`text-xs ${isPopular ? "text-[#EDE2D4]/70" : "text-[#8B6B52]"}`}>
+                              {pkg.period}
+                            </span>
+                          </div>
+                          <div className={`text-[11px] mt-1 ${isPopular ? "text-amber-200/80" : "text-[#C47D4C]"}`}>
+                            ≈ {pkg.priceINR} (INR Equivalent)
+                          </div>
+                        </div>
+                      )}
                     </div>
 
                     <p className={`text-xs leading-relaxed mb-6 ${isPopular ? "text-[#EDE2D4]/90" : "text-[#6F4E37]"}`}>
@@ -116,7 +198,7 @@ export default function Packages({ onSelectPackage }) {
 
                   {/* CTA Button */}
                   <button
-                    onClick={() => handlePackageClick(pkg.name)}
+                    onClick={() => handlePackageClick(pkg)}
                     className={`w-full py-3 px-4 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 shadow-sm ${
                       isPopular
                         ? "bg-[#F5EFE6] text-[#2B1B14] hover:bg-white"
@@ -132,8 +214,32 @@ export default function Packages({ onSelectPackage }) {
           })}
         </div>
 
+        {/* Global Clients Pitch & Payment Information Banner */}
+        <ScrollReveal direction="up" delay={180} className="mt-12">
+          <div className="p-6 sm:p-7 rounded-3xl bg-[#2B1B14] text-[#F5EFE6] border border-[#6F4E37]/50 shadow-xl max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-5">
+            <div className="flex items-start gap-3.5">
+              <div className="w-10 h-10 rounded-2xl bg-[#3A241B] border border-[#C47D4C]/40 flex items-center justify-center text-[#C47D4C] shrink-0">
+                <Globe className="w-5 h-5" />
+              </div>
+              <div>
+                <h4 className="font-serif font-bold text-sm sm:text-base text-white mb-1">
+                  Working with Foreign &amp; International Clients
+                </h4>
+                <p className="text-xs text-[#EDE2D4]/80 leading-relaxed">
+                  We collaborate across US, UK, European, and Australian time zones. Payments accepted smoothly in <strong>USD ($)</strong> via <strong>Stripe, Wise, and PayPal</strong> with milestone-based delivery.
+                </p>
+              </div>
+            </div>
+
+            <div className="shrink-0 flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#3A241B] border border-[#6F4E37] text-amber-200 text-xs font-mono">
+              <CreditCard className="w-3.5 h-3.5 text-[#C47D4C]" />
+              <span>Stripe • Wise • PayPal</span>
+            </div>
+          </div>
+        </ScrollReveal>
+
         {/* Important Transparency Disclaimers */}
-        <ScrollReveal direction="up" delay={200} className="mt-12">
+        <ScrollReveal direction="up" delay={220} className="mt-6">
           <div className="p-6 rounded-2xl bg-[#FAF6F0] border border-[#E3D5C5] text-xs text-[#6F4E37] space-y-2 max-w-4xl mx-auto">
             <div className="flex items-start gap-2">
               <Info className="w-4 h-4 text-[#C47D4C] shrink-0 mt-0.5" />

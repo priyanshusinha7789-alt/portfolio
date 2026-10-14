@@ -148,6 +148,15 @@ export default function FeaturedProject({ activeProjectId = "cafe", onSwitchProj
                       <span className="text-[#8B6B52]">Core Tech:</span>
                       <span className="font-semibold">{currentProject.tech}</span>
                     </div>
+                    {currentProject.rating && (
+                      <div className="flex items-center justify-between py-1.5 border-b border-[#E3D5C5]/60">
+                        <span className="text-[#8B6B52]">Public Rating:</span>
+                        <span className="font-semibold text-[#6F4E37] flex items-center gap-1">
+                          <span className="text-amber-600 font-bold">⭐ {currentProject.rating}</span>
+                          <span className="text-[10px] text-[#8B6B52]">({currentProject.reviewsCount})</span>
+                        </span>
+                      </div>
+                    )}
                   </div>
                 </div>
 

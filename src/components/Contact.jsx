@@ -132,11 +132,20 @@ Message: ${formData.message}`;
                 </span>
               </h2>
 
-              <p className="text-base sm:text-lg text-[#EDE2D4]/90 leading-relaxed mb-8">
+              <p className="text-base sm:text-lg text-[#EDE2D4]/90 leading-relaxed mb-6">
                 Have a business that needs a better digital presence? Tell us what you need and we'll get in touch directly.
               </p>
 
-              <div className="pt-2">
+              <div className="p-3.5 rounded-2xl bg-[#3A241B]/80 border border-[#6F4E37]/60 text-xs text-[#EDE2D4]/80 mb-6 space-y-1">
+                <div className="font-bold text-amber-200 flex items-center gap-1.5">
+                  <span>🌍 Pitching from outside India?</span>
+                </div>
+                <p className="text-[11px] text-[#A88970]">
+                  We partner with clients globally. Project quotes are available in <strong>USD ($)</strong> with easy milestone payments via <strong>Stripe, Wise, and PayPal</strong>.
+                </p>
+              </div>
+
+              <div className="pt-1">
                 <a
                   href="#work"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#3A241B] hover:bg-[#4A3427] text-white text-xs font-semibold border border-[#6F4E37] transition-all"

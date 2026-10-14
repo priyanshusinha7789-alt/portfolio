@@ -261,9 +261,14 @@ export default function Hero({ activeProjectId = "cafe", onSwitchProject, onOpen
 
                     {/* Café Hero Content */}
                     <div className="max-w-lg my-auto py-6">
-                      <span className="inline-block px-3 py-1 rounded-full bg-emerald-900/70 border border-emerald-400/30 text-emerald-300 text-xs font-medium mb-3">
-                        📍 Haldia, West Bengal
-                      </span>
+                      <div className="flex flex-wrap items-center gap-2 mb-3">
+                        <span className="inline-block px-3 py-1 rounded-full bg-emerald-900/70 border border-emerald-400/30 text-emerald-300 text-xs font-medium">
+                          📍 Haldia, West Bengal
+                        </span>
+                        <span className="inline-block px-2.5 py-1 rounded-full bg-amber-500/20 border border-amber-400/30 text-amber-300 text-xs font-semibold">
+                          ⭐ 4.1 Rating (148 Reviews)
+                        </span>
+                      </div>
                       <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-white leading-tight mb-3">
                         Good Coffee. <br />
                         <span className="italic font-normal text-amber-200">
@@ -303,10 +308,10 @@ export default function Hero({ activeProjectId = "cafe", onSwitchProject, onOpen
                     <div className="grid grid-cols-3 gap-2 border-t border-white/10 pt-4 text-center">
                       <div>
                         <div className="font-bold text-amber-300 text-xs sm:text-sm">
-                          100%
+                          4.1 ★
                         </div>
                         <div className="text-[10px] text-stone-300">
-                          Arabica Beans
+                          Google Rating (148 reviews)
                         </div>
                       </div>
                       <div className="border-x border-white/10">
@@ -448,8 +453,9 @@ export default function Hero({ activeProjectId = "cafe", onSwitchProject, onOpen
                     </span>
                   </div>
                   <div className="py-5 text-center">
-                    <p className="text-[10px] text-emerald-300 uppercase tracking-wider mb-1">
-                      Freshly Brewed in Haldia
+                    <p className="text-[10px] text-emerald-300 uppercase tracking-wider mb-1 flex items-center justify-center gap-1.5">
+                      <span>Freshly Brewed in Haldia</span>
+                      <span className="text-amber-300 font-bold">⭐ 4.1</span>
                     </p>
                     <h3 className="font-serif text-lg font-bold leading-tight mb-2">
                       Good Coffee. <br />
