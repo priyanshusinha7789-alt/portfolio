@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { CAFE_DEMO_URL, ACADEMY_DEMO_URL, PROJECTS } from "../data/websiteData";
 import {
   ArrowUpRight,
-  Sparkles,
   Coffee,
   GraduationCap,
   CheckCircle2,
@@ -136,8 +135,14 @@ export default function Hero({ activeProjectId = "cafe", onSwitchProject, onOpen
         {/* HERO VISUAL: Realistic Browser & Device Mockup */}
         <div className="relative max-w-5xl mx-auto animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200">
           
+          {/* Cinematic Ambient Glow Behind Browser Mockup */}
+          <div
+            className="absolute -inset-2 bg-gradient-to-r from-[#C47D4C]/25 via-[#6F4E37]/15 to-[#C47D4C]/25 rounded-3xl blur-2xl opacity-75 pointer-events-none -z-10 animate-pulse-glow"
+            aria-hidden="true"
+          />
+
           {/* Controls Bar for Mockup */}
-          <div className="flex flex-wrap items-center justify-between px-4 py-2.5 bg-[#2B1B14] rounded-t-2xl text-[#EDE2D4] border-t border-x border-[#3A241B] gap-2">
+          <div className="flex flex-wrap items-center justify-between px-4 py-2.5 bg-[#2B1B14] rounded-t-2xl text-[#EDE2D4] border-t border-x border-[#3A241B] gap-2 shadow-2xl">
             {/* Window Dots & Project Switcher Tabs */}
             <div className="flex items-center gap-3">
               <div className="flex items-center gap-1.5">
@@ -308,10 +313,10 @@ export default function Hero({ activeProjectId = "cafe", onSwitchProject, onOpen
                     <div className="grid grid-cols-3 gap-2 border-t border-white/10 pt-4 text-center">
                       <div>
                         <div className="font-bold text-amber-300 text-xs sm:text-sm">
-                          4.1 ★
+                          4.1 / 5
                         </div>
                         <div className="text-[10px] text-stone-300">
-                          Google Rating (148 reviews)
+                          Prototype Concept
                         </div>
                       </div>
                       <div className="border-x border-white/10">
@@ -455,7 +460,7 @@ export default function Hero({ activeProjectId = "cafe", onSwitchProject, onOpen
                   <div className="py-5 text-center">
                     <p className="text-[10px] text-emerald-300 uppercase tracking-wider mb-1 flex items-center justify-center gap-1.5">
                       <span>Freshly Brewed in Haldia</span>
-                      <span className="text-amber-300 font-bold">⭐ 4.1</span>
+                      <span className="text-amber-300 font-bold">4.1 / 5 (Prototype)</span>
                     </p>
                     <h3 className="font-serif text-lg font-bold leading-tight mb-2">
                       Good Coffee. <br />

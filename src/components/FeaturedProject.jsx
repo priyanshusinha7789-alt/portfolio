@@ -10,7 +10,6 @@ import {
   Coffee,
   GraduationCap,
   Layers,
-  ArrowRight,
 } from "lucide-react";
 
 export default function FeaturedProject({ activeProjectId = "cafe", onSwitchProject, onOpenLiveDemo }) {
@@ -149,12 +148,14 @@ export default function FeaturedProject({ activeProjectId = "cafe", onSwitchProj
                       <span className="font-semibold">{currentProject.tech}</span>
                     </div>
                     {currentProject.rating && (
-                      <div className="flex items-center justify-between py-1.5 border-b border-[#E3D5C5]/60">
-                        <span className="text-[#8B6B52]">Public Rating:</span>
-                        <span className="font-semibold text-[#6F4E37] flex items-center gap-1">
-                          <span className="text-amber-600 font-bold">⭐ {currentProject.rating}</span>
-                          <span className="text-[10px] text-[#8B6B52]">({currentProject.reviewsCount})</span>
-                        </span>
+                      <div className="flex flex-col sm:flex-row sm:items-center justify-between py-2 border-b border-[#E3D5C5]/60 gap-1">
+                        <span className="text-[#8B6B52]">Rating Status:</span>
+                        <div className="flex items-center gap-2">
+                          <span className="font-mono text-xs font-bold text-[#2B1B14]">{currentProject.rating}</span>
+                          <span className="text-[10px] px-2 py-0.5 rounded-full bg-amber-100 text-amber-900 border border-amber-300 font-mono font-medium">
+                            {currentProject.ratingStatus || "Prototype Concept — Awaiting Verification"}
+                          </span>
+                        </div>
                       </div>
                     )}
                   </div>

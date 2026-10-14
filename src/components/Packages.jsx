@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import ScrollReveal from "./ScrollReveal";
 import { PACKAGES } from "../data/websiteData";
-import { CheckCircle2, ArrowRight, Sparkles, Info, Globe, CreditCard } from "lucide-react";
+import { CURRENCY_CONFIG } from "../config/currencyConfig";
+import { CheckCircle2, ArrowRight, Sparkles, Info, Globe, CreditCard, ShieldCheck } from "lucide-react";
 
 export default function Packages({ onSelectPackage }) {
   const [currencyMode, setCurrencyMode] = useState("both"); // "both", "inr", "usd"
 
   const handlePackageClick = (pkg) => {
-    const formattedSelection = `${pkg.name} (${pkg.priceINR} / ${pkg.priceUSD})`;
+    const formattedSelection = `${pkg.name} (${pkg.priceDisplay})`;
     if (onSelectPackage) {
       onSelectPackage(formattedSelection);
     }
@@ -18,7 +19,7 @@ export default function Packages({ onSelectPackage }) {
   };
 
   return (
-    <section id="packages" className="py-20 md:py-28 bg-[#F5EFE6]/60 border-t border-[#E3D5C5] relative">
+    <section id="packages" className="py-20 md:py-28 bg-[#F5EFE6]/60 border-t border-[#E3D5C5] relative cinematic-mesh">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -36,8 +37,8 @@ export default function Packages({ onSelectPackage }) {
               </span>
             </h2>
 
-            <p className="text-base sm:text-lg text-[#6F4E37] leading-relaxed mb-8">
-              No hidden retainers or confusing agency tiers. Indian Rupee (₹) &amp; US Dollar ($) pricing presented side-by-side for total clarity.
+            <p className="text-base sm:text-lg text-[#6F4E37] leading-relaxed mb-6">
+              Clear upfront pricing with Indian Rupee (₹) and US Dollar ($) presented side by side. No hidden retainers or opaque agency markups.
             </p>
 
             {/* Currency Mode Switcher */}
@@ -87,13 +88,13 @@ export default function Packages({ onSelectPackage }) {
               <ScrollReveal
                 key={pkg.id}
                 direction="up"
-                delay={index * 120}
+                delay={index * 100}
               >
                 <div
-                  className={`h-full rounded-3xl p-7 flex flex-col justify-between transition-all duration-300 relative ${
+                  className={`h-full rounded-3xl p-7 flex flex-col justify-between transition-all duration-300 relative cinematic-card ${
                     isPopular
-                      ? "bg-[#2B1B14] text-[#F5EFE6] shadow-2xl border-2 border-[#C47D4C] transform lg:-translate-y-2"
-                      : "bg-[#FCFAF7] text-[#2B1B14] border border-[#E3D5C5] shadow-sm hover:shadow-lg"
+                      ? "bg-[#2B1B14] text-[#F5EFE6] shadow-2xl border-2 border-[#C47D4C] transform lg:-translate-y-2 ring-1 ring-[#C47D4C]/30"
+                      : "bg-[#FCFAF7] text-[#2B1B14] border border-[#E3D5C5] shadow-sm hover:shadow-xl hover:border-[#C47D4C]/50"
                   }`}
                 >
                   {/* Popular Pill */}
@@ -127,16 +128,17 @@ export default function Packages({ onSelectPackage }) {
                     <div className="mb-4">
                       {currencyMode === "both" && (
                         <div>
-                          <div className="flex flex-wrap items-baseline gap-2">
-                            <span className={`text-3xl sm:text-4xl font-serif font-bold ${isPopular ? "text-amber-200" : "text-[#2B1B14]"}`}>
-                              {pkg.priceINR}
+                          <div className="text-2xl sm:text-2xl font-serif font-bold tracking-tight">
+                            <span className={isPopular ? "text-amber-200" : "text-[#2B1B14]"}>
+                              ₹{pkg.numericINR.toLocaleString("en-IN")} INR
                             </span>
-                            <span className="text-lg sm:text-xl font-serif font-bold text-[#C47D4C]">
-                              / {pkg.priceUSD}
+                            <span className="text-[#C47D4C] font-mono text-base ml-1.5 font-normal">|</span>
+                            <span className="text-lg sm:text-xl font-serif font-bold text-[#C47D4C] ml-1.5">
+                              ${pkg.numericUSD} USD
                             </span>
                           </div>
-                          <div className={`text-[11px] mt-1 ${isPopular ? "text-[#EDE2D4]/70" : "text-[#8B6B52]"}`}>
-                            {pkg.period} • Domestic &amp; Global clients
+                          <div className={`text-[11px] mt-1.5 ${isPopular ? "text-[#EDE2D4]/70" : "text-[#8B6B52]"}`}>
+                            {pkg.period} • Side-by-side domestic &amp; foreign quote
                           </div>
                         </div>
                       )}
@@ -144,7 +146,7 @@ export default function Packages({ onSelectPackage }) {
                       {currencyMode === "inr" && (
                         <div>
                           <div className="flex items-baseline gap-1.5">
-                            <span className={`text-4xl font-serif font-bold ${isPopular ? "text-amber-200" : "text-[#2B1B14]"}`}>
+                            <span className={`text-3xl font-serif font-bold ${isPopular ? "text-amber-200" : "text-[#2B1B14]"}`}>
                               {pkg.priceINR}
                             </span>
                             <span className={`text-xs ${isPopular ? "text-[#EDE2D4]/70" : "text-[#8B6B52]"}`}>
@@ -152,7 +154,7 @@ export default function Packages({ onSelectPackage }) {
                             </span>
                           </div>
                           <div className={`text-[11px] mt-1 ${isPopular ? "text-amber-200/80" : "text-[#C47D4C]"}`}>
-                            ≈ {pkg.priceUSD} for foreign clients
+                            ≈ ${pkg.numericUSD} USD at baseline exchange rate
                           </div>
                         </div>
                       )}
@@ -160,7 +162,7 @@ export default function Packages({ onSelectPackage }) {
                       {currencyMode === "usd" && (
                         <div>
                           <div className="flex items-baseline gap-1.5">
-                            <span className={`text-4xl font-serif font-bold ${isPopular ? "text-amber-200" : "text-[#2B1B14]"}`}>
+                            <span className={`text-3xl font-serif font-bold ${isPopular ? "text-amber-200" : "text-[#2B1B14]"}`}>
                               {pkg.priceUSD}
                             </span>
                             <span className={`text-xs ${isPopular ? "text-[#EDE2D4]/70" : "text-[#8B6B52]"}`}>
@@ -168,7 +170,7 @@ export default function Packages({ onSelectPackage }) {
                             </span>
                           </div>
                           <div className={`text-[11px] mt-1 ${isPopular ? "text-amber-200/80" : "text-[#C47D4C]"}`}>
-                            ≈ {pkg.priceINR} (INR Equivalent)
+                            ≈ ₹{pkg.numericINR.toLocaleString("en-IN")} INR equivalent
                           </div>
                         </div>
                       )}
@@ -240,16 +242,27 @@ export default function Packages({ onSelectPackage }) {
 
         {/* Important Transparency Disclaimers */}
         <ScrollReveal direction="up" delay={220} className="mt-6">
-          <div className="p-6 rounded-2xl bg-[#FAF6F0] border border-[#E3D5C5] text-xs text-[#6F4E37] space-y-2 max-w-4xl mx-auto">
-            <div className="flex items-start gap-2">
-              <Info className="w-4 h-4 text-[#C47D4C] shrink-0 mt-0.5" />
-              <span className="font-semibold text-[#2B1B14]">Project Scope Policy:</span>
-              <span>Final project scope and features are confirmed before development begins.</span>
+          <div className="p-6 rounded-2xl bg-[#FAF6F0] border border-[#E3D5C5] text-xs text-[#6F4E37] space-y-2.5 max-w-4xl mx-auto shadow-xs">
+            <div className="flex items-start gap-2.5">
+              <ShieldCheck className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
+              <div>
+                <span className="font-semibold text-[#2B1B14]">Currency &amp; Exchange Disclosure: </span>
+                <span>{CURRENCY_CONFIG.note}</span>
+              </div>
             </div>
-            <div className="flex items-start gap-2">
+            <div className="flex items-start gap-2.5">
               <Info className="w-4 h-4 text-[#C47D4C] shrink-0 mt-0.5" />
-              <span className="font-semibold text-[#2B1B14]">Custom Systems:</span>
-              <span>Major redesigns, new systems, and substantial custom features beyond agreed deliverables may be charged separately.</span>
+              <div>
+                <span className="font-semibold text-[#2B1B14]">Project Scope Policy: </span>
+                <span>Final project scope, timelines, and deliverables are mutually confirmed on our initial consultation call before development starts.</span>
+              </div>
+            </div>
+            <div className="flex items-start gap-2.5">
+              <Info className="w-4 h-4 text-[#C47D4C] shrink-0 mt-0.5" />
+              <div>
+                <span className="font-semibold text-[#2B1B14]">Custom Systems &amp; Additions: </span>
+                <span>Advanced third-party API licensing, complex booking systems, or bespoke database architectures beyond package scope are quoted transparently in advance.</span>
+              </div>
             </div>
           </div>
         </ScrollReveal>

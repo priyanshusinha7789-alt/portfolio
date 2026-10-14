@@ -138,10 +138,10 @@ Message: ${formData.message}`;
 
               <div className="p-3.5 rounded-2xl bg-[#3A241B]/80 border border-[#6F4E37]/60 text-xs text-[#EDE2D4]/80 mb-6 space-y-1">
                 <div className="font-bold text-amber-200 flex items-center gap-1.5">
-                  <span>🌍 Pitching from outside India?</span>
+                  <span>🌍 International Clients &amp; Foreign Quotes</span>
                 </div>
-                <p className="text-[11px] text-[#A88970]">
-                  We partner with clients globally. Project quotes are available in <strong>USD ($)</strong> with easy milestone payments via <strong>Stripe, Wise, and PayPal</strong>.
+                <p className="text-[11px] text-[#EDE2D4]/70 leading-relaxed">
+                  Dual pricing provided in <strong>₹ INR | $ USD</strong> based on our documented reference rate (1 USD ≈ ₹83.33 INR, Oct 2026). Payments settled via <strong>Stripe, Wise, and PayPal</strong>.
                 </p>
               </div>
 
